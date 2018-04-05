@@ -1,0 +1,19 @@
+li {
+  list-style-type: none;
+}
+.margin-top {
+  margin-top: 2%;
+}
+.margin-bottom {
+  margin-bottom: 2%;  
+}
+
+.app-button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.app-checkbox {
+  margin-right: 10px;
+}
+
