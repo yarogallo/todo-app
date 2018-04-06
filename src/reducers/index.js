@@ -3,10 +3,10 @@ import { visibilityFilters, SET_VISIBILITY_FILTER, ADD_TODO, TOGGLE_TODO } from 
 
 
 const initialTodos = [
-	{text: 'study react', completed: false},
-	{text: 'study redux', completed: false},
-	{text: 'study react-redux', completed: false},
-	{text: 'study get a job', completed: false},
+	{text: 'study react', completed: true, index: 0},
+	{text: 'study redux', completed: false, index: 1},
+	{text: 'study react-redux', completed: true, index: 2},
+	{text: 'study get a job', completed: false, index: 3},
 ];
   
 //only todos part of the state
@@ -18,12 +18,13 @@ function todos(state=initialTodos, action) {
 			return[...state,
 			{
 				text: action.text,
-				completed: false
+				completed: false,
+				index: action.index
 			}];
 		
 		case TOGGLE_TODO: 
-			return state.map((todo, index) => {
-				if(index === todo.index) {
+			return state.map(todo => {
+				if(action.index === todo.index) {
 					return Object.assign({}, todo, {
 						completed: !todo.completed
 					});
